@@ -1,0 +1,179 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x77a531a7, pid=3748, tid=4856
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_11-b03 mixed mode)
+# Problematic frame:
+# C  [ntdll.dll+0x331a7]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x02406800):  JavaThread "Thread-24" [_thread_in_native, id=4856]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000004
+
+Registers:
+EAX=0x11c40000, EBX=0x0000003f, ECX=0x11c40e30, EDX=0x11c40e30
+ESP=0x0f87f7b8, EBP=0x0f87f888, ESI=0x11c40e28, EDI=0x00000000
+EIP=0x77a531a7, EFLAGS=0x00010202
+
+Top of Stack: (sp=0x0f87f7b8)
+0x0f87f7b8:   7805ddda 77a4e036 11c401c4 11c40000
+0x0f87f7c8:   11c40150 6e696f50 00726574 00000214
+0x0f87f7d8:   00000000 00000214 00000000 0f87f874
+0x0f87f7e8:   737116af 11c40150 382bf671 127b1838
+0x0f87f7f8:   11ad07e8 ffffffff 00000001 00000008
+0x0f87f808:   0f87f790 0f87f8bc 0f87f890 77a93145
+0x0f87f818:   00000000 3f00003f 11c400c4 77a501f2
+0x0f87f828:   77370000 0f87f85c 00000000 0f87f870 
+
+Instructions: (pc=0x77a531a7)
+0x77a53197:   8d 4e 08 8b 39 89 7d b8 8b 56 0c 89 55 98 8b 12
+0x77a531a7:   8b 7f 04 3b d7 0f 85 a9 ec 03 00 3b d1 0f 85 a1 
+
+
+Stack: [0x0f840000,0x0f880000),  sp=0x0f87f7b8,  free space=253k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x331a7]
+C  [ntdll.dll+0x32fe3]
+C  [libt2u.dll+0xb719]
+C  [libt2u.dll+0xae27]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.vveye.T2u.Init(Ljava/lang/String;CLjava/lang/String;)V+0
+j  com.vveye.EstablishP2Pchannel.run()V+635
+j  java.lang.Thread.run()V+11
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x02406800 JavaThread "Thread-24" [_thread_in_native, id=4856]
+  0x0cc12ae8 JavaThread "TimerQueue" daemon [_thread_blocked, id=7976]
+  0x0236eca8 JavaThread "DestroyJavaVM" [_thread_blocked, id=7740]
+  0x0ca958a8 JavaThread "AWT-EventQueue-0" [_thread_blocked, id=7532]
+  0x0c924f10 JavaThread "AWT-Windows" daemon [_thread_in_native, id=3188]
+  0x0c70e9c0 JavaThread "AWT-Shutdown" [_thread_blocked, id=4160]
+  0x0ca0c908 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=6080]
+  0x02443a10 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=8044]
+  0x0243b260 JavaThread "CompilerThread0" daemon [_thread_blocked, id=6784]
+  0x02449aa0 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=1940]
+  0x0242c838 JavaThread "Finalizer" daemon [_thread_blocked, id=3712]
+  0x0242b208 JavaThread "Reference Handler" daemon [_thread_blocked, id=7644]
+
+Other Threads:
+  0x02427dd0 VMThread [id=2348]
+  0x023d55d8 WatcherThread [id=3620]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 576K, used 208K [0x04450000, 0x044f0000, 0x04930000)
+  eden space 512K,  34% used [0x04450000, 0x0447bd40, 0x044d0000)
+  from space 64K,  51% used [0x044d0000, 0x044d83b0, 0x044e0000)
+  to   space 64K,   0% used [0x044e0000, 0x044e0000, 0x044f0000)
+ tenured generation   total 3372K, used 2022K [0x04930000, 0x04c7b000, 0x08450000)
+   the space 3372K,  59% used [0x04930000, 0x04b29b58, 0x04b29c00, 0x04c7b000)
+ compacting perm gen  total 8192K, used 7507K [0x08450000, 0x08c50000, 0x0c450000)
+   the space 8192K,  91% used [0x08450000, 0x08ba4cc8, 0x08ba4e00, 0x08c50000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\javaw.exe
+0x77a20000 - 0x77ba0000 	C:\Windows\SysWOW64\ntdll.dll
+0x77370000 - 0x77480000 	C:\Windows\syswow64\kernel32.dll
+0x757c0000 - 0x75807000 	C:\Windows\syswow64\KERNELBASE.dll
+0x77170000 - 0x77210000 	C:\Windows\syswow64\ADVAPI32.dll
+0x76460000 - 0x7650c000 	C:\Windows\syswow64\msvcrt.dll
+0x769c0000 - 0x769d9000 	C:\Windows\SysWOW64\sechost.dll
+0x756d0000 - 0x757c0000 	C:\Windows\syswow64\RPCRT4.dll
+0x75540000 - 0x755a0000 	C:\Windows\syswow64\SspiCli.dll
+0x75530000 - 0x7553c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x77210000 - 0x77310000 	C:\Windows\syswow64\USER32.dll
+0x76d30000 - 0x76dc0000 	C:\Windows\syswow64\GDI32.dll
+0x768e0000 - 0x768ea000 	C:\Windows\syswow64\LPK.dll
+0x770d0000 - 0x7716d000 	C:\Windows\syswow64\USP10.dll
+0x76f00000 - 0x76f60000 	C:\Windows\system32\IMM32.DLL
+0x768f0000 - 0x769bc000 	C:\Windows\syswow64\MSCTF.dll
+0x6d640000 - 0x6d7dd000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\client\jvm.dll
+0x75060000 - 0x75092000 	C:\Windows\system32\WINMM.dll
+0x738b0000 - 0x738fc000 	C:\Windows\system32\apphelp.dll
+0x6d290000 - 0x6d298000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\hpi.dll
+0x755a0000 - 0x755a5000 	C:\Windows\syswow64\PSAPI.DLL
+0x6d610000 - 0x6d61c000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\verify.dll
+0x6d310000 - 0x6d32d000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\java.dll
+0x6d630000 - 0x6d63f000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\zip.dll
+0x6d000000 - 0x6d16a000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\awt.dll
+0x73620000 - 0x73671000 	C:\Windows\system32\WINSPOOL.DRV
+0x76f70000 - 0x770cc000 	C:\Windows\syswow64\ole32.dll
+0x71c10000 - 0x71c90000 	C:\Windows\system32\uxtheme.dll
+0x6d240000 - 0x6d290000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\fontmanager.dll
+0x6d4d0000 - 0x6d4e3000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\net.dll
+0x767b0000 - 0x767e5000 	C:\Windows\syswow64\WS2_32.dll
+0x779f0000 - 0x779f6000 	C:\Windows\syswow64\NSI.dll
+0x73710000 - 0x7374c000 	C:\Windows\system32\mswsock.dll
+0x73360000 - 0x73366000 	C:\Windows\System32\wship6.dll
+0x6d4f0000 - 0x6d4f9000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\nio.dll
+0x10000000 - 0x104de000 	C:\Windows\system32\SOGOUPY.IME
+0x73400000 - 0x73405000 	C:\Windows\system32\MSIMG32.dll
+0x77310000 - 0x77367000 	C:\Windows\syswow64\SHLWAPI.dll
+0x71c90000 - 0x71ccc000 	C:\Windows\system32\OLEACC.dll
+0x73440000 - 0x73461000 	C:\Windows\system32\ntmarta.dll
+0x76520000 - 0x76565000 	C:\Windows\syswow64\WLDAP32.dll
+0x75460000 - 0x75469000 	C:\Windows\system32\VERSION.dll
+0x75810000 - 0x7645b000 	C:\Windows\syswow64\SHELL32.dll
+0x71bf0000 - 0x71c03000 	C:\Windows\system32\dwmapi.dll
+0x71a30000 - 0x71bb7000 	C:\Program Files (x86)\SogouInput\Components\PicFace\1.0.0.1356\PicFace.dll
+0x76e70000 - 0x76eff000 	C:\Windows\syswow64\OLEAUT32.dll
+0x75420000 - 0x7542b000 	C:\Windows\system32\profapi.dll
+0x0fab0000 - 0x0fb8d000 	C:\Program Files (x86)\SogouInput\7.7.0.6390\Resource.dll
+0x72de0000 - 0x72e13000 	C:\Java\HLK-SW16_V1.5\src\com\vveye\libt2u.dll
+0x73430000 - 0x73440000 	C:\Windows\system32\NLAapi.dll
+0x733b0000 - 0x733c0000 	C:\Windows\system32\napinsp.dll
+0x73390000 - 0x733a2000 	C:\Windows\system32\pnrpnsp.dll
+0x74e80000 - 0x74ec4000 	C:\Windows\system32\DNSAPI.dll
+0x73380000 - 0x73388000 	C:\Windows\System32\winrnr.dll
+0x73370000 - 0x7337d000 	C:\Windows\system32\wshbth.dll
+0x73900000 - 0x73933000 	C:\Users\Public\FunAcce\FunAcce.dll
+0x76880000 - 0x768ae000 	C:\Windows\syswow64\WINTRUST.dll
+0x755b0000 - 0x756d0000 	C:\Windows\syswow64\CRYPT32.dll
+0x76510000 - 0x7651c000 	C:\Windows\syswow64\MSASN1.dll
+0x73580000 - 0x73585000 	C:\Windows\System32\wshtcpip.dll
+0x75220000 - 0x7523c000 	C:\Windows\system32\IPHLPAPI.DLL
+0x75210000 - 0x75217000 	C:\Windows\system32\WINNSI.DLL
+0x733c0000 - 0x733c6000 	C:\Windows\system32\rasadhlp.dll
+0x735b0000 - 0x735e8000 	C:\Windows\System32\fwpuclnt.dll
+0x74b50000 - 0x74c45000 	C:\Windows\system32\PROPSYS.dll
+0x74ce0000 - 0x74e7e000 	C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.18837_none_41e855142bd5705d\comctl32.dll
+0x76ca0000 - 0x76d23000 	C:\Windows\syswow64\CLBCatQ.DLL
+0x77480000 - 0x7761d000 	C:\Windows\syswow64\SETUPAPI.dll
+0x768b0000 - 0x768d7000 	C:\Windows\syswow64\CFGMGR32.dll
+0x76dc0000 - 0x76dd2000 	C:\Windows\syswow64\DEVOBJ.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path=C:\Java\HLK-SW16_V1.5\src\com\vveye
+java_command: com.vveye.SW16
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\ATMEL Corporation\AT91-ISP v1.13\Library\;C:\Program Files (x86)\ATMEL Corporation\AT91-ISP v1.13\sam-ba 2.9
+USERNAME=Guan
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7601 Service Pack 1
+
+CPU:total 4 (cores per cpu 8, threads per core 2) family 6 model 5 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, ht
+
+Memory: 4k page, physical 4133424k(1622288k free), swap 4194303k(4194303k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_11-b03) for windows-x86, built on Dec 15 2006 01:16:12 by "java_re" with MS VC++ 6.0
+

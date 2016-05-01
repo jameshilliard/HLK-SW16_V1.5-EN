@@ -1,0 +1,232 @@
+#
+# An unexpected error has been detected by HotSpot Virtual Machine:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x776f8da9, pid=1648, tid=2108
+#
+# Java VM: Java HotSpot(TM) Client VM (1.5.0_11-b03 mixed mode)
+# Problematic frame:
+# C  [ntdll.dll+0x38da9]
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x0c5ac550):  JavaThread "AWT-EventQueue-0" [_thread_in_native, id=2108]
+
+siginfo: ExceptionCode=0xc0000005, writing address 0x00000014
+
+Registers:
+EAX=0x00000000, EBX=0xfffffffc, ECX=0x00000000, EDX=0x00000004
+ESP=0x108bf510, EBP=0x108bf560, ESI=0x63ece35c, EDI=0x63ece360
+EIP=0x776f8da9, EFLAGS=0x00010213
+
+Top of Stack: (sp=0x108bf510)
+0x108bf510:   63ece35c 63ece360 089dd688 00000029
+0x108bf520:   108bf544 6d6a8815 108bf588 6d715575
+0x108bf530:   022fdbd0 6d6c3338 0244b000 023d1eec
+0x108bf540:   089dd688 6d7756bc 023d1f50 00000000
+0x108bf550:   00000000 00000000 7ef78000 000009e0
+0x108bf560:   108bf588 776f8cb8 00000000 00000000
+0x108bf570:   089dd688 0c5ac550 089dd688 00000004
+0x108bf580:   00000000 00000001 108bf5d0 63ebb3eb 
+
+Instructions: (pc=0x776f8da9)
+0x776f8d99:   ff 33 c0 89 45 0c 89 45 08 8b 06 83 f8 ff 74 03
+0x776f8da9:   ff 40 14 8b 5d f4 8b 7d f0 80 3d 82 03 fe 7f 00 
+
+
+Stack: [0x10880000,0x108c0000),  sp=0x108bf510,  free space=253k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [ntdll.dll+0x38da9]
+C  [ntdll.dll+0x38cb8]
+C  [libt2u.dll+0xb3eb]
+j  com.vveye.JFrameClass.actionPerformed(Ljava/awt/event/ActionEvent;)V+693
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+84
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+35
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+517
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V+304
+j  java.awt.LightweightDispatcher.processMouseEvent(Ljava/awt/event/MouseEvent;)Z+139
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForHierarchy(ILjava/awt/Component;)Z+233
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+26
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+V  [jvm.dll+0x871a8]
+V  [jvm.dll+0xdf462]
+V  [jvm.dll+0x87079]
+V  [jvm.dll+0x86dd6]
+V  [jvm.dll+0xa1a14]
+V  [jvm.dll+0x110aa6]
+V  [jvm.dll+0x110a74]
+C  [msvcrt.dll+0x11287]
+C  [msvcrt.dll+0x11328]
+C  [kernel32.dll+0x133ca]
+C  [ntdll.dll+0x39ed2]
+C  [ntdll.dll+0x39ea5]
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.vveye.T2u.Exit()V+0
+j  com.vveye.JFrameClass.actionPerformed(Ljava/awt/event/ActionEvent;)V+693
+j  javax.swing.AbstractButton.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+84
+j  javax.swing.AbstractButton$Handler.actionPerformed(Ljava/awt/event/ActionEvent;)V+5
+j  javax.swing.DefaultButtonModel.fireActionPerformed(Ljava/awt/event/ActionEvent;)V+35
+j  javax.swing.DefaultButtonModel.setPressed(Z)V+117
+j  javax.swing.plaf.basic.BasicButtonListener.mouseReleased(Ljava/awt/event/MouseEvent;)V+35
+j  java.awt.Component.processMouseEvent(Ljava/awt/event/MouseEvent;)V+64
+j  javax.swing.JComponent.processMouseEvent(Ljava/awt/event/MouseEvent;)V+23
+j  java.awt.Component.processEvent(Ljava/awt/AWTEvent;)V+81
+j  java.awt.Container.processEvent(Ljava/awt/AWTEvent;)V+18
+j  java.awt.Component.dispatchEventImpl(Ljava/awt/AWTEvent;)V+517
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+42
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.LightweightDispatcher.retargetMouseEvent(Ljava/awt/Component;ILjava/awt/event/MouseEvent;)V+304
+j  java.awt.LightweightDispatcher.processMouseEvent(Ljava/awt/event/MouseEvent;)Z+139
+j  java.awt.LightweightDispatcher.dispatchEvent(Ljava/awt/AWTEvent;)Z+50
+j  java.awt.Container.dispatchEventImpl(Ljava/awt/AWTEvent;)V+12
+j  java.awt.Window.dispatchEventImpl(Ljava/awt/AWTEvent;)V+19
+j  java.awt.Component.dispatchEvent(Ljava/awt/AWTEvent;)V+2
+j  java.awt.EventQueue.dispatchEvent(Ljava/awt/AWTEvent;)V+46
+j  java.awt.EventDispatchThread.pumpOneEventForHierarchy(ILjava/awt/Component;)Z+233
+j  java.awt.EventDispatchThread.pumpEventsForHierarchy(ILjava/awt/Conditional;Ljava/awt/Component;)V+26
+j  java.awt.EventDispatchThread.pumpEvents(ILjava/awt/Conditional;)V+4
+j  java.awt.EventDispatchThread.pumpEvents(Ljava/awt/Conditional;)V+3
+j  java.awt.EventDispatchThread.run()V+9
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+  0x0c620258 JavaThread "TimerQueue" daemon [_thread_blocked, id=5652]
+  0x022fea30 JavaThread "DestroyJavaVM" [_thread_blocked, id=5856]
+=>0x0c5ac550 JavaThread "AWT-EventQueue-0" [_thread_in_native, id=2108]
+  0x0c5ab760 JavaThread "Image Fetcher 1" daemon [_thread_blocked, id=5332]
+  0x0c6173a0 JavaThread "Image Fetcher 0" daemon [_thread_blocked, id=3600]
+  0x0c50fb60 JavaThread "AWT-Windows" daemon [_thread_in_native, id=3268]
+  0x0c50f9d8 JavaThread "AWT-Shutdown" [_thread_blocked, id=5144]
+  0x0c50cb00 JavaThread "Java2D Disposer" daemon [_thread_blocked, id=1120]
+  0x023d9d70 JavaThread "Low Memory Detector" daemon [_thread_blocked, id=5880]
+  0x023cae88 JavaThread "CompilerThread0" daemon [_thread_blocked, id=5892]
+  0x023d97e8 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=4196]
+  0x023bc580 JavaThread "Finalizer" daemon [_thread_blocked, id=904]
+  0x023bafa8 JavaThread "Reference Handler" daemon [_thread_blocked, id=1252]
+
+Other Threads:
+  0x023b6fa8 VMThread [id=5660]
+  0x004efef8 WatcherThread [id=3952]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap
+ def new generation   total 576K, used 102K [0x043e0000, 0x04480000, 0x048c0000)
+  eden space 512K,  20% used [0x043e0000, 0x043f9b10, 0x04460000)
+  from space 64K,   0% used [0x04460000, 0x04460000, 0x04470000)
+  to   space 64K,   0% used [0x04470000, 0x04470000, 0x04480000)
+ tenured generation   total 2228K, used 1334K [0x048c0000, 0x04aed000, 0x083e0000)
+   the space 2228K,  59% used [0x048c0000, 0x04a0da40, 0x04a0dc00, 0x04aed000)
+ compacting perm gen  total 8192K, used 6501K [0x083e0000, 0x08be0000, 0x0c3e0000)
+   the space 8192K,  79% used [0x083e0000, 0x08a395e0, 0x08a39600, 0x08be0000)
+No shared spaces configured.
+
+Dynamic libraries:
+0x00400000 - 0x0040d000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\javaw.exe
+0x776c0000 - 0x77840000 	C:\Windows\SysWOW64\ntdll.dll
+0x76e40000 - 0x76f50000 	C:\Windows\syswow64\kernel32.dll
+0x75dc0000 - 0x75e06000 	C:\Windows\syswow64\KERNELBASE.dll
+0x76d90000 - 0x76e30000 	C:\Windows\syswow64\ADVAPI32.dll
+0x771f0000 - 0x7729c000 	C:\Windows\syswow64\msvcrt.dll
+0x76f50000 - 0x76f69000 	C:\Windows\SysWOW64\sechost.dll
+0x755e0000 - 0x756d0000 	C:\Windows\syswow64\RPCRT4.dll
+0x75220000 - 0x75280000 	C:\Windows\syswow64\SspiCli.dll
+0x75210000 - 0x7521c000 	C:\Windows\syswow64\CRYPTBASE.dll
+0x753b0000 - 0x754b0000 	C:\Windows\syswow64\USER32.dll
+0x75eb0000 - 0x75f40000 	C:\Windows\syswow64\GDI32.dll
+0x75280000 - 0x7528a000 	C:\Windows\syswow64\LPK.dll
+0x77150000 - 0x771ed000 	C:\Windows\syswow64\USP10.dll
+0x754b0000 - 0x75510000 	C:\Windows\system32\IMM32.DLL
+0x75510000 - 0x755dc000 	C:\Windows\syswow64\MSCTF.dll
+0x6d640000 - 0x6d7dd000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\client\jvm.dll
+0x73550000 - 0x73582000 	C:\Windows\system32\WINMM.dll
+0x72f40000 - 0x72f8c000 	C:\Windows\system32\apphelp.dll
+0x6d290000 - 0x6d298000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\hpi.dll
+0x756d0000 - 0x756d5000 	C:\Windows\syswow64\PSAPI.DLL
+0x6d610000 - 0x6d61c000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\verify.dll
+0x6d310000 - 0x6d32d000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\java.dll
+0x6d630000 - 0x6d63f000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\zip.dll
+0x6d000000 - 0x6d16a000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\awt.dll
+0x6e320000 - 0x6e371000 	C:\Windows\system32\WINSPOOL.DRV
+0x76fa0000 - 0x770fc000 	C:\Windows\syswow64\ole32.dll
+0x72b40000 - 0x72bc0000 	C:\Windows\system32\uxtheme.dll
+0x6d240000 - 0x6d290000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\fontmanager.dll
+0x6d4d0000 - 0x6d4e3000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\net.dll
+0x75e10000 - 0x75e45000 	C:\Windows\syswow64\WS2_32.dll
+0x77690000 - 0x77696000 	C:\Windows\syswow64\NSI.dll
+0x72fa0000 - 0x72fdc000 	C:\Windows\system32\mswsock.dll
+0x72e90000 - 0x72e96000 	C:\Windows\System32\wship6.dll
+0x6d4f0000 - 0x6d4f9000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\nio.dll
+0x10000000 - 0x1007b000 	C:\Program Files (x86)\kingsoft\ksdef\kis3rdhmpg.dll
+0x76140000 - 0x76d8a000 	C:\Windows\syswow64\SHELL32.dll
+0x75fa0000 - 0x75ff7000 	C:\Windows\syswow64\SHLWAPI.dll
+0x74f60000 - 0x74f69000 	C:\Windows\system32\VERSION.dll
+0x0cf90000 - 0x0d45d000 	C:\Windows\system32\SOGOUPY.IME
+0x72c30000 - 0x72c35000 	C:\Windows\system32\MSIMG32.dll
+0x72bf0000 - 0x72c2c000 	C:\Windows\system32\OLEACC.dll
+0x72bc0000 - 0x72be1000 	C:\Windows\system32\ntmarta.dll
+0x77100000 - 0x77145000 	C:\Windows\syswow64\WLDAP32.dll
+0x724d0000 - 0x724e3000 	C:\Windows\system32\dwmapi.dll
+0x71b60000 - 0x71ce7000 	C:\Program Files (x86)\SogouInput\Components\PicFace\1.0.0.1343\PicFace.dll
+0x75320000 - 0x753af000 	C:\Windows\syswow64\OLEAUT32.dll
+0x73070000 - 0x7307b000 	C:\Windows\system32\profapi.dll
+0x6d3d0000 - 0x6d3ef000 	C:\Users\Guan\MyEclipse 6.0\jre\bin\jpeg.dll
+0x11410000 - 0x114ea000 	C:\Program Files (x86)\SogouInput\7.6.0.5978\Resource.dll
+0x63eb0000 - 0x63ee3000 	C:\Java\HLK-SW16_V1.5\src\com\vveye\libt2u.dll
+0x72e80000 - 0x72e90000 	C:\Windows\system32\NLAapi.dll
+0x72e60000 - 0x72e70000 	C:\Windows\system32\napinsp.dll
+0x72e40000 - 0x72e52000 	C:\Windows\system32\pnrpnsp.dll
+0x730a0000 - 0x730e4000 	C:\Windows\system32\DNSAPI.dll
+0x72e30000 - 0x72e38000 	C:\Windows\System32\winrnr.dll
+0x72e20000 - 0x72e2d000 	C:\Windows\system32\wshbth.dll
+0x72f90000 - 0x72f95000 	C:\Windows\System32\wshtcpip.dll
+0x73450000 - 0x7346c000 	C:\Windows\system32\IPHLPAPI.DLL
+0x73440000 - 0x73447000 	C:\Windows\system32\WINNSI.DLL
+0x72f20000 - 0x72f26000 	C:\Windows\system32\rasadhlp.dll
+0x72de0000 - 0x72e18000 	C:\Windows\System32\fwpuclnt.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path=C:\Java\HLK-SW16_V1.5\src\com\vveye
+java_command: com.vveye.SW16
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+PATH=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x86;C:\Program Files (x86)\Intel\OpenCL SDK\3.0\bin\x64
+USERNAME=Guan
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 69 Stepping 1, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 6.1 Build 7601 Service Pack 1
+
+CPU:total 4 (cores per cpu 8, threads per core 2) family 6 model 5 stepping 1, cmov, cx8, fxsr, mmx, sse, sse2, ht
+
+Memory: 4k page, physical 4133424k(1894904k free), swap 4194303k(4194303k free)
+
+vm_info: Java HotSpot(TM) Client VM (1.5.0_11-b03) for windows-x86, built on Dec 15 2006 01:16:12 by "java_re" with MS VC++ 6.0
+
